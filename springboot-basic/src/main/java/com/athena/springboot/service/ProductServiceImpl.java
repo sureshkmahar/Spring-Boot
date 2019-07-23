@@ -1,9 +1,11 @@
 package com.athena.springboot.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.athena.springboot.model.Product;
 import com.athena.springboot.repository.ProductRepository;
 
 @Service
@@ -14,7 +16,7 @@ public class ProductServiceImpl implements ProductService{
 	
 	
 	@Override
-	public ResponseEntity<Object> getAllProduct() {
+	public List<Product> getAllProduct() {
 		return productRepository.getAllProduct();
 	}
 

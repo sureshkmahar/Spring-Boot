@@ -1,8 +1,10 @@
 package com.athena.springboot.repository;
 
-import org.springframework.http.ResponseEntity;
+import java.util.List;
+
+import com.athena.springboot.model.Product;
 
 public interface ProductRepository {
-	public ResponseEntity<Object> getAllProduct();
+	public List<Product> getAllProduct();
 
 }

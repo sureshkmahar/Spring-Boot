@@ -1,19 +1,18 @@
 package com.athena.springboot.repository;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import com.athena.springboot.model.Product;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
-	private static Map<Integer, Product> productRepo = new HashMap<>();
+	
+	private static List<Product> prodLst=new ArrayList<>();
 	
 	@PostConstruct
 	public void init() {
@@ -21,18 +20,18 @@ public class ProductRepositoryImpl implements ProductRepository {
 	      honey.setId(1);
 	      honey.setName("Honey");
 	      honey.setPrice(100);
-	      productRepo.put(honey.getId(), honey);
+	      prodLst.add(honey);
 	      
 	      Product almond = new Product();
 	      almond.setId(2);
 	      almond.setName("Almond");
 	      almond.setPrice(250);
-	      productRepo.put(almond.getId(), almond);
+	      prodLst.add(almond);
 	}
 	
 	@Override
-	public ResponseEntity<Object> getAllProduct() {
-		return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
+	public List<Product> getAllProduct() {
+		return prodLst;
 		
 	}
 
