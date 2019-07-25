@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.athena.springboot.model.Product;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long>{
-//	public List<Product> getAllProduct();
+public interface ProductRepository extends JpaRepository<Product, Integer>{
+
 
 }
