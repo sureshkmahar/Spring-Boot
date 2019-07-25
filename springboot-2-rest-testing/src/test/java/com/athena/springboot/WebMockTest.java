@@ -29,7 +29,7 @@ public class WebMockTest {
 	
 	@Test
 	public void greetingResturnFromService() throws Exception {
-		when(restTestService.greet()).thenReturn("Hello Suresh ");
+		when(restTestService.greetService()).thenReturn("Hello Suresh ");
 		this.mockMvc.perform(get("/rest-service")).andDo(print()).andExpect(status().isOk())
 		.andExpect(content().string(containsString("Hello Suresh")));
 		

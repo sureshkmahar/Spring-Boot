@@ -17,8 +17,9 @@ public class RestTestController {
     public @ResponseBody String greeting() {
         return "Hello World";
     }
+	
 	@GetMapping("/rest-service")
 	public @ResponseBody String getService() {
-		return restTestService.greet();
+		return restTestService.greetService();
 	}
 }

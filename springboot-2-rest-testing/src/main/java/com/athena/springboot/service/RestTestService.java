@@ -1,11 +1,6 @@
 package com.athena.springboot.service;
 
-import org.springframework.stereotype.Service;
+public interface RestTestService {
 
-@Service
-public class RestTestService {
-
-	public String greet() {
-        return "Hello World Service";
-    }
+	public String greetService();
 }
