@@ -1,10 +1,12 @@
 package com.athena.springboot.repository;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.athena.springboot.model.Product;
 
-public interface ProductRepository {
-	public List<Product> getAllProduct();
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long>{
+//	public List<Product> getAllProduct();
 
 }
